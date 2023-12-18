@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, CreateView
 from .forms import CreateUserForm
 from django.contrib.auth.models import User
 
@@ -12,13 +12,13 @@ class HomePageView(TemplateView):
         return context
 
 
-class CreateUserView(FormView):
-    template_name = 'create_user.html'
-    form_class = CreateUserForm
-    success_url = '/'
+class CreateUserView(CreateView):
+    model = User
+    fields = [
+        'first_name',
+        'last_name',
+        'username',
+        'password'
+    ]
 
-    def form_valid(self, form):
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
-        User.objects.create(**form.cleaned_data)
-        return super().form_valid(form)
+

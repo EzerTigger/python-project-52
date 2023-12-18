@@ -10,3 +10,4 @@ coverage.xml
 .idea/
 .env
 todo.txt
+db.sqlite3
