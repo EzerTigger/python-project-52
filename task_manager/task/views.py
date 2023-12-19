@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django import forms
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView, FormView, CreateView
 from .forms import CreateUserForm
 from django.contrib.auth.models import User
@@ -14,11 +16,7 @@ class HomePageView(TemplateView):
 
 class CreateUserView(CreateView):
     model = User
-    fields = [
-        'first_name',
-        'last_name',
-        'username',
-        'password'
-    ]
+    form_class = CreateUserForm
+    success_url = reverse_lazy('home')
 
 

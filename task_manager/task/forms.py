@@ -4,7 +4,6 @@ from .models import *
 
 
 class CreateUserForm(forms.ModelForm):
-
     class Meta:
         model = User
         fields = [
@@ -13,3 +12,14 @@ class CreateUserForm(forms.ModelForm):
             'username',
             'password'
         ]
+        widgets = {
+            'password': forms.PasswordInput()
+        }
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.set_password(self.cleaned_data['password'])
+        if commit:
+            user.save()
+        return user
+
