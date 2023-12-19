@@ -16,16 +16,3 @@ class CreateUserForm(UserCreationForm):
             'password2'
         ]
 
-        # labels = {}
-
-        # widgets = {
-        #     'password': forms.PasswordInput(),
-        # }
-
-
-    # def save(self, commit=True):
-    #     user = super().save(commit=False)
-    #     user.set_password(self.cleaned_data['password'])
-    #     if commit:
-    #         user.save()
-    #     return user
