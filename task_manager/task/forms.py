@@ -1,10 +1,10 @@
 from django import forms
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 from .models import *
 
 
-class CreateUserForm(forms.ModelForm):
-    confirm_password = forms.CharField(widget=forms.PasswordInput())
+class CreateUserForm(UserCreationForm):
 
     class Meta:
         model = User
@@ -12,20 +12,20 @@ class CreateUserForm(forms.ModelForm):
             'first_name',
             'last_name',
             'username',
-            'password',
-            'confirm_password'
+            'password1',
+            'password2'
         ]
 
-        labels = {}
+        # labels = {}
 
-        widgets = {
-            'password': forms.PasswordInput(),
-        }
+        # widgets = {
+        #     'password': forms.PasswordInput(),
+        # }
 
-    def save(self, commit=True):
-        user = super().save(commit=False)
-        user.set_password(self.cleaned_data['password'])
-        if commit and self.cleaned_data['password'] == \
-                self.cleaned_data['confirm_password']:
-            user.save()
-        return user
+
+    # def save(self, commit=True):
+    #     user = super().save(commit=False)
+    #     user.set_password(self.cleaned_data['password'])
+    #     if commit:
+    #         user.save()
+    #     return user
