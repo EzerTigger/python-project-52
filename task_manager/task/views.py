@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from django import forms
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, FormView, CreateView
+from django.views.generic import TemplateView, FormView, CreateView, ListView
 from .forms import CreateUserForm
 from django.contrib.auth.models import User
 
 
 class HomePageView(TemplateView):
-    template_name = 'index.html'
+    template_name = 'task/index.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -20,5 +20,6 @@ class CreateUserView(CreateView):
     success_url = reverse_lazy('home')
 
 
-
+class UsersListView(ListView):
+    model = User
 
