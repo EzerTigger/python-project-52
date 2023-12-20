@@ -4,8 +4,17 @@
 {% block title %}Регистрация{% endblock %}
 
 {% block content %}
-  <form method="post">{% csrf_token %}
-    {{ form.as_p }}
-  <input type="submit" value="Sign up">
+
+  <h1 class="my-4">
+    Регистрация
+  </h1>
+
+  <form method="post">
+    {% csrf_token %}
+    {% for f in form %}
+      <div class="mb-3"><label class="form-label" for="{{f.id_for_label}}">{{f.label}}: </label>{{ f }}</div>
+      <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+  <input class="btn btn-primary" type="submit" value="Sign up">
 </form>
 {% endblock %}

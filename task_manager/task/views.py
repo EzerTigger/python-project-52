@@ -20,3 +20,5 @@ class CreateUserView(CreateView):
     success_url = reverse_lazy('home')
 
 
+
+
