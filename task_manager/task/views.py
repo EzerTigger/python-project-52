@@ -6,8 +6,8 @@ from django import forms
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import TemplateView, FormView, CreateView, ListView, \
-    DeleteView
-from .forms import CreateUserForm, LoginUserForm
+    DeleteView, UpdateView
+from .forms import CreateUserForm, LoginUserForm, UpdateUserForm
 from django.contrib.auth.models import User
 
 
@@ -40,6 +40,13 @@ class LoginUserView(LoginView):
 def logout_user(request):
     logout(request)
     return redirect('login')
+
+
+class UpdateUserView(UpdateView):
+    model = User
+    form_class = UpdateUserForm
+    template_name_suffix = "_update_form"
+    success_url = reverse_lazy('users')
 
 
 class DeleteUserView(DeleteView):
