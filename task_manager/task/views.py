@@ -4,7 +4,9 @@ from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django import forms
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, FormView, CreateView, ListView
+from django.views import View
+from django.views.generic import TemplateView, FormView, CreateView, ListView, \
+    DeleteView
 from .forms import CreateUserForm, LoginUserForm
 from django.contrib.auth.models import User
 
@@ -38,3 +40,12 @@ class LoginUserView(LoginView):
 def logout_user(request):
     logout(request)
     return redirect('login')
+
+
+class DeleteUserView(DeleteView):
+    model = User
+    context_object_name = 'user'
+    success_url = reverse_lazy('login')
+
+
+
