@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import TemplateView, FormView, CreateView, ListView, \
     DeleteView, UpdateView
-from .forms import CreateUserForm, LoginUserForm, UpdateUserForm
+from .forms import LoginUserForm, UserForm
 from django.contrib.auth.models import User
 
 
@@ -20,8 +20,8 @@ class HomePageView(TemplateView):
 
 
 class CreateUserView(CreateView):
-    model = User
-    form_class = CreateUserForm
+    form_class = UserForm
+    template_name = 'auth/user_form.html'
     success_url = reverse_lazy('home')
 
 
@@ -44,8 +44,8 @@ def logout_user(request):
 
 class UpdateUserView(UpdateView):
     model = User
-    form_class = UpdateUserForm
-    template_name_suffix = "_update_form"
+    form_class = UserForm
+    template_name = "auth/user_update_form.html"
     success_url = reverse_lazy('users')
 
 
