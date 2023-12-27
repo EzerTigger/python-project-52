@@ -9,6 +9,7 @@ from django.views import View
 from django.views.generic import TemplateView, FormView, CreateView, ListView, \
     DeleteView, UpdateView
 from .forms import LoginUserForm, UserForm
+from .mixins import UserCustomTestMixin
 from django.contrib.auth.models import User
 
 
@@ -23,7 +24,7 @@ class HomePageView(TemplateView):
 class CreateUserView(CreateView):
     form_class = UserForm
     template_name = 'auth/user_form.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('login')
 
 
 class UsersListView(ListView):
@@ -43,24 +44,14 @@ def logout_user(request):
     return redirect('login')
 
 
-class UpdateUserView(UserPassesTestMixin, UpdateView):
+class UpdateUserView(UserCustomTestMixin, UpdateView):
     model = User
     form_class = UserForm
     template_name = "auth/user_update_form.html"
     success_url = reverse_lazy('users')
 
-    def test_func(self):
-        user_instance = User.objects.get(pk=self.request.user.id)
-        obj = self.get_object()
-        object_instance = User.objects.get(pk=obj.id)
-        return user_instance == object_instance
 
-    def handle_no_permission(self):
-        # здесь, по идее, flash
-        return redirect('users')
-
-
-class DeleteUserView(DeleteView):
+class DeleteUserView(UserCustomTestMixin, DeleteView):
     model = User
     context_object_name = 'user'
     success_url = reverse_lazy('login')
