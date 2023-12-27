@@ -1,5 +1,6 @@
 from django.contrib.auth import logout
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django import forms
@@ -42,11 +43,21 @@ def logout_user(request):
     return redirect('login')
 
 
-class UpdateUserView(UpdateView):
+class UpdateUserView(UserPassesTestMixin, UpdateView):
     model = User
     form_class = UserForm
     template_name = "auth/user_update_form.html"
     success_url = reverse_lazy('users')
+
+    def test_func(self):
+        user_instance = User.objects.get(pk=self.request.user.id)
+        obj = self.get_object()
+        object_instance = User.objects.get(pk=obj.id)
+        return user_instance == object_instance
+
+    def handle_no_permission(self):
+        # здесь, по идее, flash
+        return redirect('users')
 
 
 class DeleteUserView(DeleteView):
