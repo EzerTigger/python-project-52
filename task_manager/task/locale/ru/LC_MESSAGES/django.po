@@ -29,8 +29,6 @@ msgid "Last Name"
 msgstr "Фамилия"
 
 #: forms.py:20 forms.py:23
-#, fuzzy
-#| msgid "Users"
 msgid "Username"
 msgstr "Имя пользователя"
 
