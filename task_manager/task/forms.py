@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, \
     UserChangeForm
@@ -6,30 +7,30 @@ from .models import *
 
 
 class UserForm(forms.ModelForm):
-    first_name = forms.CharField(label='Имя', widget=forms.TextInput(
+    first_name = forms.CharField(label=_("First Name"), widget=forms.TextInput(
         attrs={
             'class': 'form-control',
-            'placeholder': 'Имя'
+            'placeholder': _('First Name')
         }))
-    last_name = forms.CharField(label='Фамилия', widget=forms.TextInput(
+    last_name = forms.CharField(label=_("Last Name"), widget=forms.TextInput(
         attrs={
             'class': 'form-control',
-            'placeholder': 'Фамилия'
+            'placeholder': _('Last Name')
         }))
-    username = forms.CharField(label='Имя пользователя', widget=forms.TextInput(
+    username = forms.CharField(label=_("Username"), widget=forms.TextInput(
         attrs={
             'class': 'form-control',
-            'placeholder': 'Имя пользователя'
+            'placeholder': _('Username')
         }))
-    password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(
+    password1 = forms.CharField(label=_("Password"), widget=forms.PasswordInput(
         attrs={
             'class': 'form-control',
-            'placeholder': 'Пароль'
+            'placeholder': _('Password')
         }))
-    password2 = forms.CharField(label='Подтверждение пароля', widget=forms.PasswordInput(
+    password2 = forms.CharField(label=_("Password Confirmation"), widget=forms.PasswordInput(
         attrs={
             'class': 'form-control',
-            'placeholder': 'Подтверждение пароля'
+            'placeholder': _('Password confirmation')
         }))
 
     class Meta:

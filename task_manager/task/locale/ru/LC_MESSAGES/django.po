@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-17 10:36+0000\n"
+"POT-Creation-Date: 2023-12-28 10:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,33 +20,57 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: templates/index.html:15
-msgid "Task Manager"
-msgstr "Менеджер задач"
+#: forms.py:10 forms.py:13
+msgid "First Name"
+msgstr "Имя"
 
-#: templates/index.html:22
-msgid "Users"
-msgstr "Пользователи"
+#: forms.py:15 forms.py:18
+msgid "Last Name"
+msgstr "Фамилия"
 
-#: templates/index.html:29
-msgid "Log in"
-msgstr "Вход"
+#: forms.py:20 forms.py:23
+#, fuzzy
+#| msgid "Users"
+msgid "Username"
+msgstr "Имя пользователя"
 
-#: templates/index.html:32
+#: forms.py:25 forms.py:28
+msgid "Password"
+msgstr "Пароль"
+
+#: forms.py:30
+msgid "Password Confirmation"
+msgstr "Подтверждение пароля"
+
+#: forms.py:33
+msgid "Password confirmation"
+msgstr "Подтверждение пароля"
+
+#: templates/auth/user_form.html:9
 msgid "Registration"
 msgstr "Регистрация"
 
-#: templates/index.html:50
+#: templates/auth/user_form.html:18
+msgid "Sign up"
+msgstr "Зарегистрировать"
+
+#: templates/task/index.html:19
 msgid "Hi from Hexlet!"
 msgstr "Привет от Хекслета!"
 
-#: templates/index.html:51
+#: templates/task/index.html:20
 msgid "Programming courses"
 msgstr "Практические курсы по программированию"
 
-#: templates/index.html:53
+#: templates/task/index.html:22
 msgid "Learn more"
 msgstr "Узнать больше"
+
+#~ msgid "Task Manager"
+#~ msgstr "Менеджер задач"
+
+#~ msgid "Log in"
+#~ msgstr "Вход"
 
 #~ msgid "Hexlet"
 #~ msgstr "Hexlet"
