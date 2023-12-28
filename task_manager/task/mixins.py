@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
+from django.contrib import messages
 
 
 class UserCustomTestMixin(UserPassesTestMixin):
@@ -11,5 +12,5 @@ class UserCustomTestMixin(UserPassesTestMixin):
         return user_instance == object_instance
 
     def handle_no_permission(self):
-        # здесь, по идее, flash
+        messages.error(self.request, "Noooo!")
         return redirect('users')
