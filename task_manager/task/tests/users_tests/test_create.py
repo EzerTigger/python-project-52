@@ -17,7 +17,7 @@ class CreateUserTest(TestCase):
         response = self.client.get(reverse_lazy('create_user'))
         self.assertEqual(response.status_code, 200)
 
-    def test_create_user(self):
+    def test_create_user_and_redirect(self):
         fixture = os.path.join(FIXTURE_DIR, 'user.json')
         test_user = json.load(open(fixture))
         response = self.client.post(
@@ -26,3 +26,6 @@ class CreateUserTest(TestCase):
         )
         user = User.objects.get(pk=1)
         self.assertEqual(user.username, test_user.get('username'))
+        self.assertRedirects(response, reverse_lazy('login'))
+
+
