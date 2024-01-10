@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-28 10:33+0000\n"
+"POT-Creation-Date: 2024-01-10 13:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,47 +20,47 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: forms.py:10 forms.py:13
+#: task/forms.py:10 task/forms.py:13
 msgid "First Name"
 msgstr "Имя"
 
-#: forms.py:15 forms.py:18
+#: task/forms.py:15 task/forms.py:18
 msgid "Last Name"
 msgstr "Фамилия"
 
-#: forms.py:20 forms.py:23
+#: task/forms.py:20 task/forms.py:23
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: forms.py:25 forms.py:28
+#: task/forms.py:25 task/forms.py:28
 msgid "Password"
 msgstr "Пароль"
 
-#: forms.py:30
+#: task/forms.py:30
 msgid "Password Confirmation"
 msgstr "Подтверждение пароля"
 
-#: forms.py:33
+#: task/forms.py:33
 msgid "Password confirmation"
 msgstr "Подтверждение пароля"
 
-#: templates/auth/user_form.html:9
+#: task/templates/auth/user_form.html:9
 msgid "Registration"
 msgstr "Регистрация"
 
-#: templates/auth/user_form.html:18
+#: task/templates/auth/user_form.html:18
 msgid "Sign up"
 msgstr "Зарегистрировать"
 
-#: templates/task/index.html:19
+#: task/templates/task/index.html:19
 msgid "Hi from Hexlet!"
 msgstr "Привет от Хекслета!"
 
-#: templates/task/index.html:20
+#: task/templates/task/index.html:20
 msgid "Programming courses"
 msgstr "Практические курсы по программированию"
 
-#: templates/task/index.html:22
+#: task/templates/task/index.html:22
 msgid "Learn more"
 msgstr "Узнать больше"
 
