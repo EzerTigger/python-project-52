@@ -150,6 +150,9 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+FIXTURE_DIRS = (
+    os.path.join(BASE_DIR, "task_manager", "task", "tests", "fixtures"),
+)
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
