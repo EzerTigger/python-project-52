@@ -1,6 +1,7 @@
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render, redirect
 from django import forms
 from django.urls import reverse_lazy
@@ -44,13 +45,15 @@ def logout_user(request):
     return redirect('login')
 
 
-class UpdateUserView(LoginRequiredCustomMixin, UserCustomTestMixin, UpdateView):
+class UpdateUserView(LoginRequiredCustomMixin, UserCustomTestMixin,
+                     SuccessMessageMixin, UpdateView):
     model = User
     form_class = UserForm
     template_name = "auth/user_update_form.html"
     success_url = reverse_lazy('users')
     permission_denied_message = _('Please login to modify user')
     modify_error_message = _('You cannot edit another user')
+    success_message = _('User update successfully')
 
 
 class DeleteUserView(LoginRequiredCustomMixin, UserCustomTestMixin, DeleteView):
