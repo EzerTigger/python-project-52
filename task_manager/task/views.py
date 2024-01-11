@@ -1,4 +1,5 @@
 from django.contrib.auth import logout
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django import forms
@@ -7,8 +8,9 @@ from django.views import View
 from django.views.generic import TemplateView, FormView, CreateView, ListView, \
     DeleteView, UpdateView
 from .forms import LoginUserForm, UserForm
-from .mixins import UserCustomTestMixin
+from .mixins import UserCustomTestMixin, LoginRequiredCustomMixin
 from django.contrib.auth.models import User
+from django.utils.translation import gettext_lazy as _
 
 
 class HomePageView(TemplateView):
@@ -42,14 +44,17 @@ def logout_user(request):
     return redirect('login')
 
 
-class UpdateUserView(UserCustomTestMixin, UpdateView):
+class UpdateUserView(LoginRequiredCustomMixin, UserCustomTestMixin, UpdateView):
     model = User
     form_class = UserForm
     template_name = "auth/user_update_form.html"
     success_url = reverse_lazy('users')
+    permission_denied_message = _('Please login to modify user')
+    modify_error_message = _('You cannot edit another user')
 
 
-class DeleteUserView(UserCustomTestMixin, DeleteView):
+
+class DeleteUserView(LoginRequiredMixin, UserCustomTestMixin, DeleteView):
     model = User
     context_object_name = 'user'
     success_url = reverse_lazy('login')
