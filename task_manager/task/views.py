@@ -1,5 +1,5 @@
 from django.contrib.auth import logout
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
 from django.contrib.auth.views import LoginView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render, redirect
@@ -38,6 +38,14 @@ class LoginUserView(LoginView):
 
     def get_success_url(self):
         return reverse_lazy('home')
+
+    def form_valid(self, form):
+        messages.info(self.request, _('Login successfully'))
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        messages.error(self.request, _('Login Error'))
+        return super().form_invalid(form)
 
 
 def logout_user(request):
