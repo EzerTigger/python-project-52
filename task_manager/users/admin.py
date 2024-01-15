@@ -1,5 +1,5 @@
 from django.contrib import admin
-from task_manager.task.models import Status
+from task_manager.users.models import Status
 
 
 admin.site.register(Status)

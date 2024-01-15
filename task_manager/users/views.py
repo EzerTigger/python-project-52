@@ -15,7 +15,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class HomePageView(TemplateView):
-    template_name = 'task/index.html'
+    template_name = 'users/index.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
