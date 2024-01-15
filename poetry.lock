@@ -81,6 +81,20 @@ files = [
 Django = ">=3.2"
 
 [[package]]
+name = "django-rename-app"
+version = "0.1.7"
+description = "A Django Management Command to rename existing Django Applications."
+optional = false
+python-versions = "*"
+files = [
+    {file = "django_rename_app-0.1.7-py2.py3-none-any.whl", hash = "sha256:68ed0dbc9fc167b72cf2f3ba6b464d7981a42a0e09070476cf94f1f603f7a433"},
+    {file = "django_rename_app-0.1.7.tar.gz", hash = "sha256:f1236dacfbaf06d63aa53a665333c9e0b4943ef41019aae7626dd5fb5ffa69b5"},
+]
+
+[package.dependencies]
+django = "*"
+
+[[package]]
 name = "gunicorn"
 version = "21.2.0"
 description = "WSGI HTTP Server for UNIX"
@@ -258,4 +272,4 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "aca9ca8db806a6f2e4771d225af3a2c825edcad6e36ca1af6e0132b628af8d70"
+content-hash = "46213626bb9435f6d49e9a2d013da955d1efd18411bb7601f707b653a5ce1dcf"
