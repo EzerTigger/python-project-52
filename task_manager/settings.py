@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_rename_app',
     'task_manager',
     'task_manager.users',
+    'task_manager.statuses',
     'django_bootstrap5'
 ]
 
