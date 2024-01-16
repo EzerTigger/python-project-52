@@ -7,6 +7,8 @@ from task_manager.statuses.forms import StatusForm
 from task_manager.statuses.models import Status
 from django.utils.translation import gettext_lazy as _
 
+from task_manager.users.mixins import LoginRequiredCustomMixin
+
 
 class CreateStatusView(CreateView, SuccessMessageMixin):
     form_class = StatusForm
@@ -18,5 +20,6 @@ class CreateStatusView(CreateView, SuccessMessageMixin):
         return super().form_valid(form)
 
 
-class StatusesList(ListView):
+class StatusesList(LoginRequiredCustomMixin, ListView):
     model = Status
+    permission_denied_message = _('You are not logged in. Please log in')
