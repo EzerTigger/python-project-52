@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-10 13:47+0000\n"
+"POT-Creation-Date: 2024-01-17 12:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,18 +19,66 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-#: templates/base.html:15
+
+#: task_manager/statuses/forms.py:8
+msgid "First Name"
+msgstr "Имя"
+
+#: task_manager/statuses/forms.py:11
+#: task_manager/statuses/templates/statuses/status_list.html:15
+msgid "Name"
+msgstr "Имя"
+
+#: task_manager/statuses/templates/statuses/create_status.html:9
+msgid "Create Status"
+msgstr "Создать статус"
+
+#: task_manager/statuses/templates/statuses/create_status.html:18
+msgid "Create"
+msgstr "Создать"
+
+#: task_manager/statuses/templates/statuses/status_confirm_delete.html:8
+msgid "Delete Status"
+msgstr "Удалить статус"
+
+#: task_manager/statuses/templates/statuses/status_list.html:7
+#: task_manager/templates/base.html:25
+msgid "Statuses"
+msgstr "Статусы"
+
+#: task_manager/statuses/templates/statuses/status_list.html:16
+msgid "Created at"
+msgstr "Дата создания"
+
+#: task_manager/statuses/templates/statuses/status_update.html:8
+msgid "Update Status"
+msgstr "Изменение статуса"
+
+#: task_manager/statuses/views.py:17 task_manager/statuses/views.py:23
+#: task_manager/statuses/views.py:32 task_manager/statuses/views.py:39
+msgid "You are not logged in. Please log in"
+msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
+
+#: task_manager/statuses/views.py:18
+msgid "Status successfully created"
+msgstr "Статус успешно создан"
+
+#: task_manager/statuses/views.py:33
+msgid "Status update successfully"
+msgstr "Статус успешно изменен"
+
+#: task_manager/templates/base.html:15
 msgid "Task Manager"
 msgstr "Менеджер задач"
 
-#: templates/base.html:22
+#: task_manager/templates/base.html:22
 msgid "Users"
 msgstr "Пользователи"
 
-#: templates/base.html:31
+#: task_manager/templates/base.html:36
 msgid "Log in"
 msgstr "Вход"
 
-#: templates/base.html:34
+#: task_manager/templates/base.html:39
 msgid "Registration"
 msgstr "Регистрация"
