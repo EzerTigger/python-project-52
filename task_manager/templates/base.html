@@ -21,12 +21,12 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'users' %}">{% translate 'Users' %}</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'status_list' %}">{% translate 'Statuses' %}</a>
-          </li>
         </ul>
         <ul class="navbar-nav">
             {% if request.user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'status_list' %}">{% translate 'Statuses' %}</a>
+              </li>
               <form action="{% url 'logout' %}" method="post">
                 {% csrf_token %}
                 <input class="btn nav-link" type="submit" value="Выход">
