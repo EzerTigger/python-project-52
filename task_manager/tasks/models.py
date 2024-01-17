@@ -8,9 +8,11 @@ from task_manager.statuses.models import Status
 class Task(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    status = models.ForeignKey(Status, on_delete=models.SET_NULL)
-    executor = models.ForeignKey(User, on_delete=models.SET_NULL)
-    author = models.ForeignKey(User, on_delete=models.SET_NULL)
+    status = models.ForeignKey(Status, on_delete=models.PROTECT)
+    executor = models.ForeignKey(User, on_delete=models.PROTECT,
+                                 related_name='tasks')
+    author = models.ForeignKey(User, on_delete=models.PROTECT,
+                               related_name='created_tasks')
     created_at = models.DateField(auto_now_add=True)
 
     class Meta:
