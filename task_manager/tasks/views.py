@@ -15,7 +15,7 @@ from task_manager.users.mixins import LoginRequiredCustomMixin
 class CreateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, CreateView):
     form_class = TaskForm
     template_name = 'tasks/create_task.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('task_list')
     permission_denied_message = _('You are not logged in. Please log in')
     success_message = _('Task successfully created')
 
