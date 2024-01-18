@@ -8,6 +8,7 @@ from task_manager.statuses.models import Status
 from django.utils.translation import gettext_lazy as _
 
 from task_manager.tasks.forms import TaskForm
+from task_manager.tasks.models import Task
 from task_manager.users.mixins import LoginRequiredCustomMixin
 
 
@@ -21,3 +22,8 @@ class CreateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+class TasksList(LoginRequiredCustomMixin, ListView):
+    model = Task
+    permission_denied_message = _('You are not logged in. Please log in')
