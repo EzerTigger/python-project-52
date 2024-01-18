@@ -5,7 +5,7 @@ from task_manager.statuses.models import Status
 
 
 class StatusForm(forms.ModelForm):
-    name = forms.CharField(label=_("First Name"), widget=forms.TextInput(
+    name = forms.CharField(label=_("Name"), widget=forms.TextInput(
         attrs={
             'class': 'form-control',
             'placeholder': _('Name')

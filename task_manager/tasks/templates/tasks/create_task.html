@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}Создание задачи{% endblock %}
+
+{% block content %}
+
+  <h1 class="my-4">
+    {% translate 'Create Task' %}
+  </h1>
+
+  <form method="post">
+    {% csrf_token %}
+    {% for f in form %}
+      <div class="mb-3"><label class="form-label" for="{{f.id_for_label}}">{{f.label}}: </label>{{ f }}</div>
+      <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+  <input class="btn btn-primary" type="submit" value="{% translate 'Create' %}">
+</form>
+{% endblock %}
