@@ -27,3 +27,9 @@ class CreateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, CreateView):
 class TasksList(LoginRequiredCustomMixin, ListView):
     model = Task
     permission_denied_message = _('You are not logged in. Please log in')
+
+
+class DeleteTaskView(LoginRequiredCustomMixin, DeleteView):
+    model = Task
+    success_url = reverse_lazy('task_list')
+    permission_denied_message = _('You are not logged in. Please log in')

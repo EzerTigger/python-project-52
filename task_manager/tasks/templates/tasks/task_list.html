@@ -32,7 +32,7 @@
     <td>
       <a href="">{% translate 'Update' %}</a>
       <br>
-      <a href="">{% translate 'Delete' %}</a>
+      <a href="{% url 'delete_task' task.id %}">{% translate 'Delete' %}</a>
     </td>
   </tr>
 {% endfor %}
