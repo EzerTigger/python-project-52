@@ -14,6 +14,7 @@ from task_manager.users.mixins import LoginRequiredCustomMixin
 
 class LabelsList(LoginRequiredCustomMixin, ListView):
     model = Label
+    context_object_name = 'labels'
     permission_denied_message = _('You are not logged in. Please log in')
 
 
