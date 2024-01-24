@@ -1,7 +1,7 @@
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, DeleteView, UpdateView
+from django.views.generic import CreateView, ListView, DeleteView, UpdateView, DetailView
 from django.contrib import messages
 from task_manager.statuses.forms import StatusForm
 from task_manager.statuses.models import Status
@@ -27,6 +27,16 @@ class CreateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, CreateView):
 class TasksList(LoginRequiredCustomMixin, ListView):
     model = Task
     permission_denied_message = _('You are not logged in. Please log in')
+
+
+class TaskDetail(LoginRequiredCustomMixin, DetailView):
+    model = Task
+    context_object_name = 'task'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["labels"] = self.object.label_set.all()
+        return context
 
 
 class UpdateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView):

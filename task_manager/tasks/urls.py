@@ -8,4 +8,5 @@ urlpatterns = [
     path('', views.TasksList.as_view(), name='task_list'),
     path('<int:pk>/update/', views.UpdateTaskView.as_view(),
          name='update_task'),
+    path('<int:pk>/', views.TaskDetail.as_view(), name='task_detail')
 ]
