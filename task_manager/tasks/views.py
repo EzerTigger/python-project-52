@@ -40,7 +40,6 @@ class TaskDetail(LoginRequiredCustomMixin, DetailView):
 
 
 class UpdateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView):
-
     model = Task
     form_class = TaskForm
     template_name = "tasks/update_task.html"

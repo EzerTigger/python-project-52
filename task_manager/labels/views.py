@@ -24,3 +24,12 @@ class CreateLabelView(LoginRequiredCustomMixin, SuccessMessageMixin, CreateView)
     success_url = reverse_lazy('label_list')
     permission_denied_message = _('You are not logged in. Please log in')
     success_message = _('Label successfully created')
+
+
+class UpdateLabelView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView):
+    model = Label
+    form_class = LabelForm
+    template_name = "labels/update_label.html"
+    success_url = reverse_lazy('label_list')
+    permission_denied_message = _('You are not logged in. Please log in')
+    success_message = _('Label update successfully')
