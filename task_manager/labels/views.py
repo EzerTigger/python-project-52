@@ -33,3 +33,9 @@ class UpdateLabelView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView)
     success_url = reverse_lazy('label_list')
     permission_denied_message = _('You are not logged in. Please log in')
     success_message = _('Label update successfully')
+
+
+class DeleteLabelView(LoginRequiredCustomMixin, DeleteView):
+    model = Label
+    success_url = reverse_lazy('label_list')
+    permission_denied_message = _('You are not logged in. Please log in')
