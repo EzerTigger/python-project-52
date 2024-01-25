@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
+from task_manager.labels.models import Label
 from task_manager.statuses.models import Status
 
 
@@ -13,6 +13,7 @@ class Task(models.Model):
                                  related_name='tasks', blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.PROTECT,
                                related_name='created_tasks')
+    labels = models.ManyToManyField(Label, related_name='tasks', null=True, blank=True)
     created_at = models.DateField(auto_now_add=True)
 
     class Meta:
