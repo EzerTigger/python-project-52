@@ -13,7 +13,7 @@ class Task(models.Model):
                                  related_name='tasks', blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.PROTECT,
                                related_name='created_tasks')
-    labels = models.ManyToManyField(Label, related_name='tasks', null=True, blank=True)
+    labels = models.ManyToManyField(Label, related_name='tasks', null=True, blank=True, through='TaskLabel')
     created_at = models.DateField(auto_now_add=True)
 
     class Meta:
@@ -22,3 +22,8 @@ class Task(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class TaskLabel(models.Model):
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    label = models.ForeignKey(Label, on_delete=models.PROTECT)
