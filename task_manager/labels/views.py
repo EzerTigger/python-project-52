@@ -10,6 +10,7 @@ from task_manager.labels.models import Label
 from django.utils.translation import gettext_lazy as _
 
 from task_manager.users.mixins import LoginRequiredCustomMixin
+from task_manager.labels.mixins import DeleteLabelProtectedMixin
 
 
 class LabelsList(LoginRequiredCustomMixin, ListView):
@@ -35,7 +36,9 @@ class UpdateLabelView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView)
     success_message = _('Label update successfully')
 
 
-class DeleteLabelView(LoginRequiredCustomMixin, DeleteView):
+class DeleteLabelView(LoginRequiredCustomMixin, DeleteLabelProtectedMixin, DeleteView):
     model = Label
     success_url = reverse_lazy('label_list')
     permission_denied_message = _('You are not logged in. Please log in')
+    protected_error_message = _("Label can't be deleted - on use now")
+    success_message = _('Label was deleted successfully')
