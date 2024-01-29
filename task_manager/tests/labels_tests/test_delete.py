@@ -4,21 +4,20 @@ from django.test import TestCase
 from task_manager.labels.models import Label
 
 
-class Create(TestCase):
+class DeleteLabel(TestCase):
     fixtures = ['db_label.json']
 
-    def test_create_open_without_login(self):
-        response = self.client.get(reverse('create_label'))
+    def test_delete_open_without_login(self):
+        response = self.client.get(reverse('delete_label', kwargs={'pk': 1}))
         self.assertEqual(response.status_code, 302)
 
-    def test_create_label(self):
+    def test_delete_label(self):
         user = User.objects.all().first()
         self.client.force_login(user=user)
-        response = self.client.get(reverse('create_label'))
+        response = self.client.get(reverse('delete_label', kwargs={'pk': 1}))
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(Label.objects.all().count(), 1)
         self.client.post(
-            reverse('create_label'),
-            {'name': 'test2'}
+            reverse('delete_label', kwargs={'pk': 1})
         )
-        self.assertEqual(Label.objects.all().count(), 2)
+        statuses = Label.objects.all()
+        self.assertEqual(len(statuses), 0)
