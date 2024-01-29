@@ -11,7 +11,6 @@ from task_manager.labels.models import Label
 from django.utils.translation import gettext_lazy as _
 
 from task_manager.users.mixins import LoginRequiredCustomMixin
-from task_manager.labels.mixins import DeleteLabelProtectedMixin
 
 
 class LabelsList(LoginRequiredCustomMixin, ListView):
