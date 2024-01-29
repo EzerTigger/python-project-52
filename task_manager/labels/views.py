@@ -1,5 +1,6 @@
 from django.contrib.messages.views import SuccessMessageMixin
-from django.shortcuts import render
+from django.db.models import ProtectedError
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DeleteView, UpdateView
 from django.contrib import messages
@@ -36,9 +37,18 @@ class UpdateLabelView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView)
     success_message = _('Label update successfully')
 
 
-class DeleteLabelView(LoginRequiredCustomMixin, DeleteLabelProtectedMixin, DeleteView):
+class DeleteLabelView(LoginRequiredCustomMixin, DeleteView):
     model = Label
     success_url = reverse_lazy('label_list')
     permission_denied_message = _('You are not logged in. Please log in')
     protected_error_message = _("Label can't be deleted - on use now")
     success_message = _('Label was deleted successfully')
+
+    def form_valid(self, form):
+        try:
+            super().form_valid(form)
+        except ProtectedError:
+            messages.error(self.request, self.protected_error_message)
+        else:
+            messages.info(self.request, self.success_message)
+        return redirect(self.get_success_url())
