@@ -10,6 +10,7 @@ from django.utils.translation import gettext_lazy as _
 from task_manager.tasks.forms import TaskForm
 from task_manager.tasks.models import Task
 from task_manager.users.mixins import LoginRequiredCustomMixin
+from task_manager.tasks.filters import TaskFilter
 
 
 class CreateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, CreateView):
@@ -27,6 +28,11 @@ class CreateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, CreateView):
 class TasksList(LoginRequiredCustomMixin, ListView):
     model = Task
     permission_denied_message = _('You are not logged in. Please log in')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = TaskFilter(self.request.GET, queryset=self.get_queryset())
+        return context
 
 
 class TaskDetail(LoginRequiredCustomMixin, DetailView):
