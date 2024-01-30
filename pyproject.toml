@@ -17,6 +17,7 @@ django-bootstrap5 = "^23.3"
 django-extensions = "^3.2.3"
 whitenoise = "^6.6.0"
 django-rename-app = "^0.1.7"
+django-filter = "^23.5"
 
 
 [build-system]
