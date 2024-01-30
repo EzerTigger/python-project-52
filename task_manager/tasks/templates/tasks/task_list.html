@@ -6,6 +6,8 @@
 {% block content %}
 <h1>{% translate 'Tasks' %}</h1>
 
+{{ data }}
+
 <a class="btn btn-primary mb-3" href="{% url 'create_task' %}">{% translate 'Create task' %}</a>
 
 <div class="card mb-3">
@@ -14,6 +16,10 @@
       {% for f in filter.form %}
       <div class="mb-3"><label class="form-label" for="{{f.id_for_label}}">{{ f.label }}</label>{{ f }}</div>
       {% endfor %}
+      <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="own">
+    <label class="form-check-label" for="exampleCheck1">Only own</label>
+  </div>
       <button type="submit" class="btn btn-primary">{% translate 'Show' %}</button>
     </form>
   </div>

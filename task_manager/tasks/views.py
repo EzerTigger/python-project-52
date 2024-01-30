@@ -28,10 +28,14 @@ class CreateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, CreateView):
 class TasksList(LoginRequiredCustomMixin, ListView):
     model = Task
     permission_denied_message = _('You are not logged in. Please log in')
+    queryset = Task.objects.all()
 
     def get_context_data(self, **kwargs):
+        if self.request.GET.get('own') == 'on':
+            user = self.request.user
+            self.queryset = Task.objects.filter(author=user)
         context = super().get_context_data(**kwargs)
-        context['filter'] = TaskFilter(self.request.GET, queryset=self.get_queryset())
+        context['filter'] = TaskFilter(self.request.GET, queryset=self.queryset)
         return context
 
 
