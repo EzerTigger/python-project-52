@@ -31,8 +31,10 @@ DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = ['webserver', '127.0.0.1']
 
+ROLLBAR_ACCESS_TOKEN = os.getenv('ROLLBAR_ACCESS_TOKEN')
+
 ROLLBAR = {
-    'access_token': '3acd7e4eed1c491a9e2cb8b25ad267db',
+    'access_token': ROLLBAR_ACCESS_TOKEN,
     'environment': 'development' if DEBUG else 'production',
     'code_version': '1.0',
     'root': BASE_DIR,
