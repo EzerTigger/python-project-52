@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-17 12:37+0000\n"
+"POT-Creation-Date: 2024-02-05 09:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,75 +20,75 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/users/forms.py:10 task_manager/users/forms.py:13
+#: users/forms.py:10 users/forms.py:13
 msgid "First Name"
 msgstr "Имя"
 
-#: task_manager/users/forms.py:15 task_manager/users/forms.py:18
+#: users/forms.py:15 users/forms.py:18
 msgid "Last Name"
 msgstr "Фамилия"
 
-#: task_manager/users/forms.py:20 task_manager/users/forms.py:23
+#: users/forms.py:20 users/forms.py:23
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: task_manager/users/forms.py:25 task_manager/users/forms.py:28
+#: users/forms.py:25 users/forms.py:28
 msgid "Password"
 msgstr "Пароль"
 
-#: task_manager/users/forms.py:30
+#: users/forms.py:30
 msgid "Password Confirmation"
 msgstr "Подтверждение пароля"
 
-#: task_manager/users/forms.py:33
+#: users/forms.py:33
 msgid "Password confirmation"
 msgstr "Подтверждение пароля"
 
-#: task_manager/users/templates/auth/user_form.html:9
+#: users/templates/auth/user_form.html:9
 msgid "Registration"
 msgstr "Регистрация"
 
-#: task_manager/users/templates/auth/user_form.html:18
+#: users/templates/auth/user_form.html:18
 msgid "Sign up"
 msgstr "Зарегистрировать"
 
-#: task_manager/users/templates/users/index.html:19
+#: users/templates/users/index.html:19
 msgid "Hi from Hexlet!"
 msgstr "Привет от Хекслета!"
 
-#: task_manager/users/templates/users/index.html:20
+#: users/templates/users/index.html:20
 msgid "Programming courses"
 msgstr "Практические курсы по программированию"
 
-#: task_manager/users/templates/users/index.html:22
+#: users/templates/users/index.html:22
 msgid "Learn more"
 msgstr "Узнать больше"
 
-#: task_manager/users/views.py:43
+#: users/views.py:43
 msgid "Login successfully"
 msgstr "Вы залогинены"
 
-#: task_manager/users/views.py:47
+#: users/views.py:47
 msgid "Login Error"
 msgstr ""
 
-#: task_manager/users/views.py:62
+#: users/views.py:62
 msgid "Please login to modify user"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-#: task_manager/users/views.py:63
+#: users/views.py:63
 msgid "You cannot edit another user"
 msgstr "У вас нет прав для изменения другого пользователя."
 
-#: task_manager/users/views.py:64
+#: users/views.py:64
 msgid "User update successfully"
 msgstr "Пользователь успешно изменен"
 
-#: task_manager/users/views.py:71
+#: users/views.py:71
 msgid "Please login to delete user"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-#: task_manager/users/views.py:72
+#: users/views.py:72
 msgid "You cannot delete another user"
 msgstr "У вас нет прав для удаения другого пользователя."
 
