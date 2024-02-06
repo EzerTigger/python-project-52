@@ -8,8 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 09:01+0000\n"
-"POT-Creation-Date: 2024-02-05 09:09+0000\n"
+"POT-Creation-Date: 2024-02-06 12:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,17 +43,16 @@ msgstr "Создать"
 msgid "Delete Label"
 msgstr "Удалить метку"
 
-
 #: labels/templates/labels/label_list.html:4
-#: labels/templates/labels/label_list.html:7 tasks/forms.py:57
-#: tasks/templates/tasks/task_detail.html:35 templates/base.html:31
+#: labels/templates/labels/label_list.html:7 tasks/filters.py:16
+#: tasks/forms.py:57 tasks/templates/tasks/task_detail.html:35
+#: templates/base.html:31
 msgid "Labels"
 msgstr "Метки"
 
 #: labels/templates/labels/label_list.html:9
 msgid "Create label"
 msgstr "Создать метку"
-
 
 #: labels/templates/labels/label_list.html:16
 #: statuses/templates/statuses/status_list.html:16
@@ -66,7 +64,6 @@ msgstr "Дата создания"
 #: labels/templates/labels/label_list.html:27
 #: labels/templates/labels/update_label.html:17
 #: tasks/templates/tasks/task_list.html:51
-
 msgid "Update"
 msgstr "Изменить"
 
@@ -80,10 +77,6 @@ msgstr "Удалить"
 msgid "Update Label"
 msgstr "Изменение метки"
 
-
-
-
-
 #: labels/views.py:19 labels/views.py:26 labels/views.py:35 labels/views.py:42
 #: statuses/views.py:17 statuses/views.py:23 statuses/views.py:32
 #: statuses/views.py:39 tasks/views.py:20 tasks/views.py:30 tasks/views.py:57
@@ -92,7 +85,6 @@ msgid "You are not logged in. Please log in"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
 #: labels/views.py:27
-
 msgid "Label successfully created"
 msgstr "Метка успешно создана"
 
@@ -100,17 +92,13 @@ msgstr "Метка успешно создана"
 msgid "Label update successfully"
 msgstr "Метка успешно изменена"
 
-
-
 #: labels/views.py:43
 msgid "Label can't be deleted - on use now"
 msgstr "Невозможно удалить метку, потому что она используется"
 
 #: labels/views.py:44
-
 msgid "Label was deleted successfully"
 msgstr "Метка успешно удалена"
-
 
 #: statuses/templates/statuses/create_status.html:9
 msgid "Create Status"
@@ -136,24 +124,17 @@ msgstr "Статус успешно создан"
 msgid "Status update successfully"
 msgstr "Статус успешно изменен"
 
-
 #: tasks/filters.py:11 tasks/forms.py:55
 #: tasks/templates/tasks/task_detail.html:26
 #: tasks/templates/tasks/task_list.html:33
-
 msgid "Status"
 msgstr "Статус"
 
 #: tasks/filters.py:13 tasks/forms.py:56
 #: tasks/templates/tasks/task_detail.html:22
-
-
-#: tasks/forms.py:56 tasks/templates/tasks/task_detail.html:22
-
 #: tasks/templates/tasks/task_list.html:35
 msgid "Executor"
 msgstr "Исполнитель"
-
 
 #: tasks/forms.py:30 tasks/forms.py:54
 msgid "Description"
@@ -171,8 +152,6 @@ msgstr "Удаление задачи"
 msgid "Delete Task"
 msgstr "Удаление задачи"
 
-
-
 #: tasks/templates/tasks/task_detail.html:4
 #: tasks/templates/tasks/task_detail.html:7
 msgid "Viewing task"
@@ -189,7 +168,6 @@ msgid "Tasks"
 msgstr "Задачи"
 
 #: tasks/templates/tasks/task_list.html:11
-
 msgid "Create task"
 msgstr "Создать задачу"
 
@@ -197,14 +175,12 @@ msgstr "Создать задачу"
 msgid "Only own"
 msgstr "Только свои задачи"
 
-
 #: tasks/templates/tasks/task_list.html:23
 msgid "Show"
 msgstr "Показать"
 
 #: tasks/templates/tasks/update_task.html:4
 #: tasks/templates/tasks/update_task.html:8
-
 msgid "Update Task"
 msgstr "Изменение задачи"
 
@@ -215,7 +191,6 @@ msgstr "Задача успешно создана"
 #: tasks/views.py:58
 msgid "Task update successfully"
 msgstr "Задача успешно изменена"
-
 
 #: templates/base.html:15
 msgid "Task Manager"
@@ -232,6 +207,3 @@ msgstr "Вход"
 #: templates/base.html:45
 msgid "Registration"
 msgstr "Регистрация"
-
-#~ msgid "First Name"
-#~ msgstr "Имя"

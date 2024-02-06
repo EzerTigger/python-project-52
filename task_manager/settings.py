@@ -46,6 +46,7 @@ if RENDER_EXTERNAL_HOSTNAME:
 # Application definition
 
 INSTALLED_APPS = [
+    'task_manager',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +55,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'django_rename_app',
-    'task_manager',
     'task_manager.users',
     'task_manager.statuses',
     'task_manager.tasks',
@@ -145,7 +145,8 @@ LANGUAGES = [
 ]
 
 LOCALE_PATHS = [
-    BASE_DIR / "task_manager" / "users"
+    BASE_DIR / "task_manager" / "users",
+    BASE_DIR / "task_manager"
 ]
 TIME_ZONE = 'UTC'
 

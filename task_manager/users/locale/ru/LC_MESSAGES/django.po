@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-05 09:09+0000\n"
+"POT-Creation-Date: 2024-02-06 12:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,12 +91,3 @@ msgstr "Вы не авторизованы! Пожалуйста, выполни
 #: users/views.py:72
 msgid "You cannot delete another user"
 msgstr "У вас нет прав для удаения другого пользователя."
-
-#~ msgid "Task Manager"
-#~ msgstr "Менеджер задач"
-
-#~ msgid "Log in"
-#~ msgstr "Вход"
-
-#~ msgid "Hexlet"
-#~ msgstr "Hexlet"
