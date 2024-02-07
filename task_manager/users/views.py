@@ -72,7 +72,7 @@ class UpdateUserView(LoginRequiredCustomMixin, UserCustomTestMixin,
 class DeleteUserView(LoginRequiredCustomMixin, UserCustomTestMixin, DeleteView):
     model = User
     context_object_name = 'user'
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('users')
     permission_denied_message = _('Please login to delete user')
     modify_error_message = _('You cannot delete another user')
 
