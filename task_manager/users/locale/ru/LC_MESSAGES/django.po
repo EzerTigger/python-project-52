@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 11:51+0000\n"
+"POT-Creation-Date: 2024-02-07 12:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,34 +64,38 @@ msgstr "Практические курсы по программировани�
 msgid "Learn more"
 msgstr "Узнать больше"
 
-#: users/views.py:43
+#: users/views.py:31
+msgid "Register successfully"
+msgstr "Пользователь успешно зарегистрирован"
+
+#: users/views.py:47
 msgid "Login successfully"
 msgstr "Вы залогинены"
 
-#: users/views.py:47
+#: users/views.py:51
 msgid "Login Error"
 msgstr ""
 
-#: users/views.py:53
+#: users/views.py:57
 msgid "Logout successfully"
 msgstr "Вы разлогинены"
 
-#: users/views.py:63
+#: users/views.py:67
 msgid "Please login to modify user"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-#: users/views.py:64
+#: users/views.py:68
 msgid "You cannot edit another user"
 msgstr "У вас нет прав для изменения другого пользователя."
 
-#: users/views.py:65
+#: users/views.py:69
 msgid "User update successfully"
 msgstr "Пользователь успешно изменен"
 
-#: users/views.py:72
+#: users/views.py:76
 msgid "Please login to delete user"
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-#: users/views.py:73
+#: users/views.py:77
 msgid "You cannot delete another user"
 msgstr "У вас нет прав для удаения другого пользователя."
