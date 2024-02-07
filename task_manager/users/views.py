@@ -50,7 +50,8 @@ class LoginUserView(LoginView):
 
 def logout_user(request):
     logout(request)
-    return redirect('login')
+    messages.info(request, _('Logout successfully'))
+    return redirect('home')
 
 
 class UpdateUserView(LoginRequiredCustomMixin, UserCustomTestMixin,
