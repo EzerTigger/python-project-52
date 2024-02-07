@@ -33,7 +33,8 @@ class UpdateStatusView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView
     success_message = _('Status update successfully')
 
 
-class DeleteStatusView(LoginRequiredCustomMixin, DeleteView):
+class DeleteStatusView(LoginRequiredCustomMixin, SuccessMessageMixin, DeleteView):
     model = Status
     success_url = reverse_lazy('status_list')
     permission_denied_message = _('You are not logged in. Please log in')
+    success_message = _('Status deleted successfully')
