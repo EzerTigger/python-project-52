@@ -27,6 +27,10 @@ class CreateUserView(CreateView):
     template_name = 'auth/user_form.html'
     success_url = reverse_lazy('login')
 
+    def form_valid(self, form):
+        messages.success(self.request, _('Register successfully'))
+        return super().form_valid(form)
+
 
 class UsersListView(ListView):
     model = User
