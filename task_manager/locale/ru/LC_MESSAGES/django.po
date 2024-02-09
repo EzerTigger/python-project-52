@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 16:44+0000\n"
+"POT-Creation-Date: 2024-02-09 07:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: labels/forms.py:17 labels/forms.py:22
-#: labels/templates/labels/label_list.html:15 statuses/forms.py:8
+#: labels/templates/labels/label_list.html:14 statuses/forms.py:8
 #: statuses/forms.py:11 statuses/templates/statuses/status_list.html:14
 #: tasks/forms.py:24 tasks/forms.py:53 tasks/templates/tasks/task_list.html:32
 msgid "Name"
@@ -43,31 +43,29 @@ msgstr "Создать"
 msgid "Delete Label"
 msgstr "Удалить метку"
 
-#: labels/templates/labels/label_list.html:4
-#: labels/templates/labels/label_list.html:7 tasks/filters.py:16
-#: tasks/forms.py:57 tasks/templates/tasks/task_detail.html:35
-#: templates/base.html:31
+#: labels/templates/labels/label_list.html:6 tasks/forms.py:57
+#: tasks/templates/tasks/task_detail.html:35 templates/base.html:31
 msgid "Labels"
 msgstr "Метки"
 
-#: labels/templates/labels/label_list.html:9
+#: labels/templates/labels/label_list.html:8
 msgid "Create label"
 msgstr "Создать метку"
 
-#: labels/templates/labels/label_list.html:16
+#: labels/templates/labels/label_list.html:15
 #: statuses/templates/statuses/status_list.html:15
 #: tasks/templates/tasks/task_detail.html:30
 #: tasks/templates/tasks/task_list.html:36
 msgid "Created at"
 msgstr "Дата создания"
 
-#: labels/templates/labels/label_list.html:27
+#: labels/templates/labels/label_list.html:26
 #: labels/templates/labels/update_label.html:17
 #: tasks/templates/tasks/task_list.html:51
 msgid "Update"
 msgstr "Изменить"
 
-#: labels/templates/labels/label_list.html:29
+#: labels/templates/labels/label_list.html:28
 #: tasks/templates/tasks/task_list.html:53
 msgid "Delete"
 msgstr "Удалить"
@@ -139,6 +137,10 @@ msgstr "Статус"
 #: tasks/templates/tasks/task_list.html:35
 msgid "Executor"
 msgstr "Исполнитель"
+
+#: tasks/filters.py:16
+msgid "Label"
+msgstr "Метка"
 
 #: tasks/forms.py:30 tasks/forms.py:54
 msgid "Description"
