@@ -1,6 +1,6 @@
 from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models import ProtectedError
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DeleteView, UpdateView
 from django.contrib import messages
@@ -19,7 +19,8 @@ class LabelsList(LoginRequiredCustomMixin, ListView):
     permission_denied_message = _('You are not logged in. Please log in')
 
 
-class CreateLabelView(LoginRequiredCustomMixin, SuccessMessageMixin, CreateView):
+class CreateLabelView(LoginRequiredCustomMixin, SuccessMessageMixin,
+                      CreateView):
     form_class = LabelForm
     template_name = 'labels/create_label.html'
     success_url = reverse_lazy('label_list')

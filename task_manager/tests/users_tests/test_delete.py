@@ -28,4 +28,3 @@ class DeleteUserTest(TestCase):
             )
         )
         self.assertNotIn(user, User.objects.all())
-

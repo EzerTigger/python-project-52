@@ -2,11 +2,9 @@ from django.contrib.auth import logout
 from django.contrib import messages
 from django.contrib.auth.views import LoginView
 from django.contrib.messages.views import SuccessMessageMixin
-from django.shortcuts import render, redirect
-from django import forms
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.views import View
-from django.views.generic import TemplateView, FormView, CreateView, ListView, \
+from django.views.generic import TemplateView, CreateView, ListView, \
     DeleteView, UpdateView
 from .forms import LoginUserForm, UserForm
 from .mixins import UserCustomTestMixin, LoginRequiredCustomMixin
@@ -70,14 +68,10 @@ class UpdateUserView(LoginRequiredCustomMixin, UserCustomTestMixin,
 
 
 class DeleteUserView(LoginRequiredCustomMixin, UserCustomTestMixin,
-                     SuccessMessageMixin,DeleteView):
+                     SuccessMessageMixin, DeleteView):
     model = User
     context_object_name = 'user'
     success_url = reverse_lazy('users')
     permission_denied_message = _('Please login to delete user')
     modify_error_message = _('You cannot delete another user')
     success_message = _('User deleted successfully')
-
-
-
-

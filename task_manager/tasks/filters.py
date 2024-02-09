@@ -16,8 +16,7 @@ class TaskFilter(django_filters.FilterSet):
         label=_('Label'),
         queryset=Label.objects.all()
     )
- 
+
     class Meta:
         model = Task
         fields = ['status', 'executor', 'labels']
-

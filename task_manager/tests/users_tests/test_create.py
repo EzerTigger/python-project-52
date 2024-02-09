@@ -27,5 +27,3 @@ class CreateUserTest(TestCase):
         user = User.objects.get(pk=1)
         self.assertEqual(user.username, test_user.get('username'))
         self.assertRedirects(response, reverse_lazy('login'))
-
-

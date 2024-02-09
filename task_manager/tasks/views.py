@@ -1,10 +1,6 @@
 from django.contrib.messages.views import SuccessMessageMixin
-from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DeleteView, UpdateView, DetailView
-from django.contrib import messages
-from task_manager.statuses.forms import StatusForm
-from task_manager.statuses.models import Status
 from django.utils.translation import gettext_lazy as _
 
 from task_manager.tasks.forms import TaskForm
