@@ -12,12 +12,12 @@ class TaskFilter(django_filters.FilterSet):
                                               queryset=Status.objects.all())
     executor = django_filters.ModelChoiceFilter(label=_('Executor'),
                                                 queryset=User.objects.all())
-    labels = django_filters.ModelMultipleChoiceFilter(
-        label=_('Labels'),
+    label = django_filters.ModelMultipleChoiceFilter(
+        label=_('Label'),
         queryset=Label.objects.all()
     )
  
     class Meta:
         model = Task
-        fields = ['status', 'executor', 'labels']
+        fields = ['status', 'executor', 'label']
 
