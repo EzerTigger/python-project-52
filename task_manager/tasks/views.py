@@ -58,7 +58,8 @@ class UpdateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView):
     success_message = _('Task update successfully')
 
 
-class DeleteTaskView(LoginRequiredCustomMixin, DeleteView):
+class DeleteTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, DeleteView):
     model = Task
     success_url = reverse_lazy('task_list')
     permission_denied_message = _('You are not logged in. Please log in')
+    success_message = _('Task deleted successfully')
