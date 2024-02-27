@@ -1,17 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'base_delete_form.html' %}
 {% load i18n %}
 
 {% block title %}{% translate 'Delete task' %}{% endblock %}
 
-{% block content %}
-<h1 class="my-4">
+{% block form_title %}
   {% translate 'Delete Task' %}
-</h1>
+{% endblock form_title %}
 
-<form method="post">
-  {% csrf_token %}
+{% block message %}
   <p>Вы уверены, что хотите удалить {{ task.name }}?</p>
-  {{ form }}
-  <input class="btn btn-danger" type="submit" value="Да, удалить">
-</form>
-{% endblock %}
+{% endblock message %}
