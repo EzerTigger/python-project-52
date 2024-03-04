@@ -70,6 +70,7 @@ class UpdateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView):
         form.fields['labels'].label = _('Labels')
         return form
 
+
 class DeleteTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, DeleteView):
     model = Task
     success_url = reverse_lazy('task_list')
