@@ -4,13 +4,8 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DeleteView, UpdateView
 from django.contrib import messages
-from django import forms
-
-from task_manager.labels.forms import LabelForm
 from task_manager.labels.models import Label
-
 from django.utils.translation import gettext_lazy as _
-
 from task_manager.users.mixins import LoginRequiredCustomMixin
 
 
@@ -37,11 +32,16 @@ class CreateLabelView(LoginRequiredCustomMixin, SuccessMessageMixin,
 
 class UpdateLabelView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView):
     model = Label
-    form_class = LabelForm
+    fields = ['name']
     template_name = "labels/update_label.html"
     success_url = reverse_lazy('label_list')
     permission_denied_message = _('You are not logged in. Please log in')
     success_message = _('Label update successfully')
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields['name'].label = _('Name')
+        return form
 
 
 class DeleteLabelView(LoginRequiredCustomMixin, DeleteView):
