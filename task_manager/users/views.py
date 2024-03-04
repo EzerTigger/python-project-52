@@ -61,7 +61,7 @@ class UpdateUserView(LoginRequiredCustomMixin, UserCustomTestMixin,
                      SuccessMessageMixin, UpdateView):
     model = User
     form_class = UserForm
-    template_name = "auth/user_update_form.html"
+    template_name = "users/user_update_form.html"
     success_url = reverse_lazy('users')
     permission_denied_message = _('Please login to modify user')
     modify_error_message = _('You cannot edit another user')
