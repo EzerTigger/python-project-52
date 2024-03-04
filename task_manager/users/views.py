@@ -70,6 +70,7 @@ class UpdateUserView(LoginRequiredCustomMixin, UserCustomTestMixin,
 
 class DeleteUserView(LoginRequiredCustomMixin, UserCustomTestMixin,
                      SuccessMessageMixin, DeleteView):
+    template_name = 'users/user_confirm_delete.html'
     model = User
     context_object_name = 'user'
     success_url = reverse_lazy('users')
