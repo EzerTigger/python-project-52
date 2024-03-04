@@ -22,7 +22,7 @@ class HomePageView(TemplateView):
 
 class CreateUserView(CreateView):
     form_class = UserForm
-    template_name = 'auth/user_form.html'
+    template_name = 'users/user_form.html'
     success_url = reverse_lazy('login')
 
     def form_valid(self, form):
