@@ -10,11 +10,21 @@ from task_manager.tasks.filters import TaskFilter
 
 
 class CreateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, CreateView):
-    form_class = TaskForm
+    model = Task
+    fields = ['name', 'description', 'status', 'executor', 'labels']
     template_name = 'tasks/create_task.html'
     success_url = reverse_lazy('task_list')
     permission_denied_message = _('You are not logged in. Please log in')
     success_message = _('Task successfully created')
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields['name'].label = _('Name')
+        form.fields['description'].label = _('Description')
+        form.fields['status'].label = _('Status')
+        form.fields['executor'].label = _('Executor')
+        form.fields['labels'].label = _('Labels')
+        return form
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -47,12 +57,20 @@ class TaskDetail(LoginRequiredCustomMixin, DetailView):
 
 class UpdateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView):
     model = Task
-    form_class = TaskForm
+    fields = ['name', 'description', 'status', 'executor', 'labels']
     template_name = "tasks/update_task.html"
     success_url = reverse_lazy('task_list')
     permission_denied_message = _('You are not logged in. Please log in')
     success_message = _('Task update successfully')
 
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields['name'].label = _('Name')
+        form.fields['description'].label = _('Description')
+        form.fields['status'].label = _('Status')
+        form.fields['executor'].label = _('Executor')
+        form.fields['labels'].label = _('Labels')
+        return form
 
 class DeleteTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, DeleteView):
     model = Task
