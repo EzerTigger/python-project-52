@@ -1,7 +1,6 @@
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DeleteView, UpdateView
-from task_manager.statuses.forms import StatusForm
 from task_manager.statuses.models import Status
 from django.utils.translation import gettext_lazy as _
 
@@ -9,11 +8,17 @@ from task_manager.users.mixins import LoginRequiredCustomMixin
 
 
 class CreateStatusView(LoginRequiredCustomMixin, SuccessMessageMixin, CreateView):
-    form_class = StatusForm
+    model = Status
+    fields = ['name']
     template_name = 'statuses/create_status.html'
     success_url = reverse_lazy('status_list')
     permission_denied_message = _('You are not logged in. Please log in')
     success_message = _('Status successfully created')
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields['name'].label = _('Name')
+        return form
 
 
 class StatusesList(LoginRequiredCustomMixin, ListView):
@@ -22,13 +27,17 @@ class StatusesList(LoginRequiredCustomMixin, ListView):
 
 
 class UpdateStatusView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView):
-
     model = Status
-    form_class = StatusForm
+    fields = ['name']
     template_name = "statuses/status_update.html"
     success_url = reverse_lazy('status_list')
     permission_denied_message = _('You are not logged in. Please log in')
     success_message = _('Status update successfully')
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields['name'].label = _('Name')
+        return form
 
 
 class DeleteStatusView(LoginRequiredCustomMixin, SuccessMessageMixin, DeleteView):
