@@ -32,6 +32,7 @@ class CreateUserView(CreateView):
 
 class UsersListView(ListView):
     model = User
+    template_name = 'users/user_list.html'
 
 
 class LoginUserView(LoginView):
