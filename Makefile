@@ -8,6 +8,8 @@ shell:
 	poetry run python3 manage.py shell_plus
 install:
 	poetry install
+lock:
+	poetry lock
 migrate:
 	poetry run python3 ./manage.py migrate
 static:
