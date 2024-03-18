@@ -14,4 +14,6 @@ migrate:
 	poetry run python3 ./manage.py migrate
 static:
 	poetry run python3 ./manage.py collectstatic
-build: install migrate static
+super:
+	poetry run python3 ./manage.py createsuperuser --noinput
+build: install migrate static super
