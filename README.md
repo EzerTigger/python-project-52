@@ -34,9 +34,6 @@ Registration and authentication are required to work with the system.
 #### Make sure that pip is always up-to-date. If not, use the following:
 ```python -m pip install --upgrade pip```
 
-#### Next install poetry on your OS. (the link is below)
-[Poetry installation](https://python-poetry.org/docs/)
-##### don't forget to init poetry packages with command ```poetry init```
 
 ### 
 
