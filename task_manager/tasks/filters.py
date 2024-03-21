@@ -1,4 +1,7 @@
 import django_filters
+from django.db.models import BooleanField
+from django.forms import CheckboxInput
+from django_filters.widgets import BooleanWidget
 
 from task_manager.labels.models import Label
 from task_manager.statuses.models import Status

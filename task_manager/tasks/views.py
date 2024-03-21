@@ -2,6 +2,8 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DeleteView, UpdateView, DetailView
 from django.utils.translation import gettext_lazy as _
+from django_filters.views import FilterView
+
 from task_manager.tasks.models import Task
 from task_manager.users.mixins import LoginRequiredCustomMixin
 from task_manager.tasks.filters import TaskFilter
@@ -29,18 +31,18 @@ class CreateTaskView(LoginRequiredCustomMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
-class TasksList(LoginRequiredCustomMixin, ListView):
+class TasksList(LoginRequiredCustomMixin, FilterView):
     model = Task
     permission_denied_message = _('You are not logged in. Please log in')
-    queryset = Task.objects.all()
+    filterset_class = TaskFilter
+    template_name = 'tasks/task_list.html'
 
-    def get_context_data(self, **kwargs):
+    def get_queryset(self):
         if self.request.GET.get('own') == 'on':
             user = self.request.user
-            self.queryset = Task.objects.filter(author=user)
-        context = super().get_context_data(**kwargs)
-        context['filter'] = TaskFilter(self.request.GET, queryset=self.queryset)
-        return context
+            return Task.objects.filter(author=user)
+        else:
+            return Task.objects.all()
 
 
 class TaskDetail(LoginRequiredCustomMixin, DetailView):
