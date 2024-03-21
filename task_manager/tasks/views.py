@@ -1,6 +1,6 @@
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, DeleteView, UpdateView, DetailView
+from django.views.generic import CreateView, DeleteView, UpdateView, DetailView
 from django.utils.translation import gettext_lazy as _
 from django_filters.views import FilterView
 
