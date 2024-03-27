@@ -8,5 +8,5 @@
 {% endblock form_title %}
 
 {% block message %}
-  <p>Вы уверены, что хотите удалить {{ task.name }}?</p>
+  <p>{% translate 'Are you sure to delete' %} {{ task.name }}?</p>
 {% endblock message %}

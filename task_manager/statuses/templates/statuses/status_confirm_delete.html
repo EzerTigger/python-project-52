@@ -1,12 +1,12 @@
 {% extends 'base_delete_form.html' %}
 {% load i18n %}
 
-{% block title %}Удаление статуса{% endblock %}
+{% block title %}{% translate 'Delete Status' %}{% endblock %}
 
 {% block form_title %}
   {% translate 'Delete Status' %}
 {% endblock form_title %}
 
 {% block message %}
-  <p>Вы уверены, что хотите удалить {{ status.name }}?</p>
+  <p>{% translate 'Are you sure to delete' %} {{ status.name }}?</p>
 {% endblock message %}
