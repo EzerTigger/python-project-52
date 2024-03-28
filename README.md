@@ -28,23 +28,38 @@ Registration and authentication are required to work with the system.
 
 ***
 
-#### Check your pip version with the following command:
-```python -m pip --version```
+##  Environment variables
 
-#### Make sure that pip is always up-to-date. If not, use the following:
-```python -m pip install --upgrade pip```
+* DATABASE_URL
+* SECRET_KEY
+* ROLLBAR_ACCESS_TOKEN
 
-
-### 
-
-*** 
+Create `.env` file in the root folder and add these variables
+***
 
 ## Makefile 
 
 #### Current project starts after typing 2 commands :
 
 * ``` make install```, which makes poetry install packages from pyproject.toml
-* ```make lock```, which locks poetry packages inside poetry.lock
+* ```make migrate```, which create tables in the database
+
+#### You can also run:
+
+Tests:
+```make test```
+
+Linter (Flake8):
+```make lint```
+
 ***
 
-#### After configuration, you should use ```make dev``` to start your app
+## Start
+
+Start the Gunicorn Web-server by running:
+
+```make start```
+
+Or start in development mode using:
+
+```make dev```

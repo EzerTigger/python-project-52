@@ -14,4 +14,6 @@ migrate:
 	poetry run python3 ./manage.py migrate
 static:
 	poetry run python3 ./manage.py collectstatic
+start:
+	poetry run gunicorn task_manager.wsgi:application
 build: install migrate static
