@@ -15,11 +15,6 @@ class CreateStatusView(LoginRequiredCustomMixin, SuccessMessageMixin, CreateView
     permission_denied_message = _('You are not logged in. Please log in')
     success_message = _('Status successfully created')
 
-    def get_form(self, form_class=None):
-        form = super().get_form(form_class)
-        form.fields['name'].label = _('Name')
-        return form
-
 
 class StatusesList(LoginRequiredCustomMixin, ListView):
     model = Status
@@ -33,11 +28,6 @@ class UpdateStatusView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView
     success_url = reverse_lazy('status_list')
     permission_denied_message = _('You are not logged in. Please log in')
     success_message = _('Status update successfully')
-
-    def get_form(self, form_class=None):
-        form = super().get_form(form_class)
-        form.fields['name'].label = _('Name')
-        return form
 
 
 class DeleteStatusView(LoginRequiredCustomMixin, SuccessMessageMixin, DeleteView):

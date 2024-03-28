@@ -24,11 +24,6 @@ class CreateLabelView(LoginRequiredCustomMixin, SuccessMessageMixin,
     permission_denied_message = _('You are not logged in. Please log in')
     success_message = _('Label successfully created')
 
-    def get_form(self, form_class=None):
-        form = super().get_form(form_class)
-        form.fields['name'].label = _('Name')
-        return form
-
 
 class UpdateLabelView(LoginRequiredCustomMixin, SuccessMessageMixin, UpdateView):
     model = Label
